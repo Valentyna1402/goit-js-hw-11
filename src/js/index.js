@@ -8,7 +8,6 @@ const inputEl = document.querySelector('input[name="searchQuery"]');
 const submitBtn = document.querySelector('button[type="submit"]');
 const galleryContainer = document.querySelector('.gallery');
 const loadMoreBtn = document.querySelector('.load-more')
-//console.log(formEl)
 
 const BASE_URL = 'https://pixabay.com/api/';
 const API_KEY = '39706932-7f7283177220c33d5b7c024e4';
@@ -21,19 +20,13 @@ const imageApiService = new ImageApiService();
 searchFormEl.addEventListener('submit', onFormSubmit);
 loadMoreBtn.addEventListener('click', onLoadMore);
 
-// function onFormSubmit (evt) {
-//     evt.preventDefault();
 
-//    query = evt.currentTarget.elements.searchQuery.value;
-
-//     imageApiService.fetchImages(query);
-// }
 
 function onFormSubmit(e) {
     e.preventDefault();
     query = evt.currentTarget.elements.searchQuery.value;
     console.log(query);
-   return imageApiService.fetchImages(query);
+ imageApiService.fetchImages(query);
 }
 
 function onLoadMore () {
@@ -44,12 +37,12 @@ function onLoadMore () {
 //onsole.log(5)
 
 
-function createMarkup(searchQuery) {
-    API.fetchGallery().then(({hits}) => {
-        if (searchQuery) {
+// function createMarkup(searchQuery) {
+//     API.fetchGallery().then(({hits}) => {
+//         if (searchQuery) {
             
-        }
-    }
+//         }
+//     }
      
-    )
-}
+//     )
+// }
