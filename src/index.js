@@ -89,7 +89,7 @@ function clearContainer() {
 }
 
 function hideEl(el) {
-  el.classList.add('is-hidden');
+  el.style.display = 'none';
 }
 
 function showEl(el) {
