@@ -60,6 +60,14 @@ async function onLoadMore(evt) {
   try {
     const hits = await imageApiService.fetchImages();
     const markup = await hits.map(hit => renderMarkup(hit)).join('');
+
+    if (hits.length < 40) {
+      hideEl(loadMoreBtn);
+      return Notiflix.Notify.warning(
+        'Вибачте, але ви досягли останньої сторінки результатів пошуку.'
+      );
+    }
+
     return markup;
   } catch (error) {
     hideEl(loadMoreBtn);
